@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.previous_day_button)
     Button previousDayButton;
 
-    @Bind(R.id.save_button)
-    Button saveButton;
-
     @Bind(R.id.next_day_button)
     Button nextDayButton;
 
@@ -38,11 +35,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        taskEdit.setLines(100);
+        taskEdit.setHorizontallyScrolling(false);
+
         weekdays = new WeekdayCycler(getResources().getStringArray(R.array.weekdays));
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.weekdays, R.layout.day_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dayHeader.setAdapter(adapter);
+
         setViewTexts();
     }
 
