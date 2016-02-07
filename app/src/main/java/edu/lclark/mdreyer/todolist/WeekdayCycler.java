@@ -46,4 +46,15 @@ public class WeekdayCycler {
     public String getNextDay() {
         return nextDay;
     }
+
+    public int getCurrentDayIndex() {
+        return currentDayIndex;
+    }
+
+    public void goToDay(int index) {
+        currentDayIndex = index;
+        currentDay = weekdays[currentDayIndex];
+        previousDay = weekdays[(currentDayIndex + weekdays.length - 1) % weekdays.length];
+        nextDay = weekdays[(currentDayIndex + 1) % weekdays.length];
+    }
 }
