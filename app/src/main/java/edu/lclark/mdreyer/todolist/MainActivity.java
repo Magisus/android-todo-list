@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public void saveTask() {
         getPreferences(MODE_PRIVATE).edit().putString(weekdays.getCurrentDay(),
                 taskEdit.getText().toString()).apply();
+        Toast.makeText(this, R.string.save_notification, Toast.LENGTH_SHORT).show();
     }
 
     @OnEditorAction(R.id.task_edit)

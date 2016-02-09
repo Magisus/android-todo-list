@@ -2,6 +2,7 @@
     <string name="app_name">ToDoList</string>
     <string name="task_edit_hint">Your plans for %s</string>
     <string name="keyboard_save_button">Save</string>
+    <string name="save_notification">Task saved!</string>
 
     <string-array name="weekdays">
         <item>Monday</item>
